@@ -1,0 +1,3 @@
+#!/bin/bash
+
+yum list installed *lib* | wc -l

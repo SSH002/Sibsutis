@@ -1,0 +1,20 @@
+<html>
+	<head>
+	</head>
+	<script>
+		function square(form3) {
+			form3.inp2.value = form3.inp1.value * form3.inp1.value
+		}
+	</script>
+	<body bgcolor="maroon">
+		<p><font size=5><b>Вычислить площадь</b></font></p>
+		<p><b>Уйдите с поля 'Сторона'</b></p><br>
+		<form name="form3">
+			<label for="inp1">Сторона: </label>
+			<input name="inp1" type="textbox" onChange="square(form3)">
+			<br>
+			<label for="inp2">Площадь: </label>
+			<input name="inp2" type="textbox">
+		</form>
+	</body>
+</html>

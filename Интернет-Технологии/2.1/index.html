@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Лабораторная работа 2.1</title>
+	</head>
+	<body bgcolor="yellow"><h1 align="center"><font color="maroon">Поменять картинки местами</font></h1>
+		<form>
+			<p align="center"><input type="button" value="Обменять" onClick="set_image()"></p>
+		</form>
+		<img name="image1" src="1.png">
+		<img name="image2" src="2.png">
+		<script language="JavaScript">
+			function set_image()
+			{
+				var i = 0, buffer;
+				if ((i % 2) == 0) {
+					buffer = document.image1.src;
+					document.image1.src = document.image2.src;
+					document.image2.src = buffer;
+					i++;
+				} else {
+					buffer = document.image2.src;
+					document.image2.src = document.image1.src;
+					document.image1.src = buffer;
+					i++;
+				}
+			}
+		</script>
+	</body>
+</html>

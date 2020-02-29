@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Лабораторная работа №2.3</title>
+	<script name="Javascript">
+		var dragimage={
+			z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
+			initialize:function(){
+				document.onmousedown=this.imgdrag
+				document.onmouseup=function() {
+					this.dragapproved=0
+				}
+			},
+				imgdrag:function(ini){
+				var evtobj=window.event? window.event : ini
+				this.targetobj=window.event? event.srcElement : ini.target
+				if (this.targetobj.className=="imgdrag") {
+					this.dragapproved=1
+					if (isNaN(parseInt(this.targetobj.style.left))) {
+						this.targetobj.style.left=0
+					}
+					if (isNaN(parseInt(this.targetobj.style.top))) {
+						this.targetobj.style.top=0
+					}
+					this.offsetx=parseInt(this.targetobj.style.left)
+					this.offsety=parseInt(this.targetobj.style.top)
+					this.x=evtobj.clientX
+					this.y=evtobj.clientY
+					if (evtobj.preventDefault) {
+						evtobj.preventDefault()
+					}
+					document.onmousemove=dragimage.moveit
+				}
+			},
+			moveit:function(ini){
+				var evtobj=window.event? window.event : ini
+				if (this.dragapproved==1){
+					this.targetobj.style.left=this.offsetx+evtobj.clientX-this.x+"px"
+					this.targetobj.style.top=this.offsety+evtobj.clientY-this.y+"px"
+					return false
+				}
+			}
+		}
+		dragimage.initialize()
+	</script>
+	<style>
+		.imgdrag {
+			position:relative; cursor:hand; z-index: 100;
+		}
+	</style>
+</head>
+<body bgcolor="aqua">
+	<p align="center"><font size=7><b>Собери мозайку!</b></font></p>
+	<p>Перемещая картинки мышкой, нужно собрать рисунок.</p>
+	
+	<img name="img1" src="./r0.gif" class="imgdrag">
+	<img name="img2" src="./r1.gif" class="imgdrag">
+	<img name="img3" src="./r2.gif" class="imgdrag">
+	<img name="img4" src="./r3.gif" class="imgdrag">
+	<img name="img5" src="./r4.gif" class="imgdrag">
+
+</body>
+</html>

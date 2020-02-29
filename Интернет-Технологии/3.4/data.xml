@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<students>
+	<facult name="ИВТ">
+		<course value="2">
+			<group name="ИС-741">
+				<student name="Дмитрий Малыхов"></student>
+				<student name="Айасын Канапиянов"></student>
+				<student name="Иван Куртуков"></student>
+				<student name="Алексей Костин"></student>
+				<lessons>
+					<lesson>Иностранный язык</lesson>
+					<lesson>Мат. Логика</lesson>
+					<lesson>Матемтика</lesson>
+					<lesson>Экономика</lesson>
+					<lesson>Физ-ра</lesson>
+					<lesson>ООП</lesson>
+					<lesson>Интернет-технологии</lesson>
+				</lessons>
+			</group>
+		</course>
+		<course value="2">
+			<group name="ИС-841">
+				<student name="Николай Богомолов"></student>
+				<student name="Александр Пистолетов"></student>
+				<student name="Владимир Гринько"></student>
+				<student name="Геннадий Щербаков"></student>
+				<lessons>
+					<lesson>Иностранный язык</lesson>
+					<lesson>Право</lesson>
+					<lesson>История</lesson>
+					<lesson>Алгебра и геометрия</lesson>
+					<lesson>Физ-ра</lesson>
+					<lesson>Программирование</lesson>
+					<lesson>Мат. Анализ</lesson>
+				</lessons>
+			</group>	
+		</course>
+	</facult>
+	<facult name="МРМ">
+		<course value="3">
+			<group name="РИ-64">
+				<student name="Святослав Грачев"></student>
+				<student name="Артур Хренов"></student>
+				<lessons>
+					<lesson>Теория телеграфика</lesson>
+					<lesson>ТЭЦ</lesson>
+					<lesson>УФЦ</lesson>
+					<lesson>МТС</lesson>
+					<lesson>Менеджмент</lesson>
+					<lesson>Физ-ра</lesson>
+					<lesson>ПДС</lesson>
+				</lessons>
+			</group>
+		</course>
+		<course value="4">
+			<group name="РИ-65">
+				<student name="Максим Сысоев"></student>
+				<student name="Кирилл Ефремов"></student>
+				<lessons>
+					<lesson>Сети доступа</lesson>
+					<lesson>Архитектура ЭВМ</lesson>
+					<lesson>ПИС</lesson>
+					<lesson>СДЭ</lesson>
+					<lesson>Менеджмент</lesson>
+					<lesson>Электропитание устройств</lesson>
+					<lesson>ЭСТ</lesson>
+				</lessons>
+			</group>
+		</course>
+	</facult>
+	<facult name="АЭС">
+		<course value="1">
+			<group name="ИА-57">
+				<student name="Яросвет Погудалин"></student>
+				<student name="Михаил Вкус"></student>
+				<student name="Андрей Баландин"></student>
+				<lessons>
+					<lesson>Математика</lesson>
+					<lesson>Спец. главы Мат. Анализа</lesson>
+					<lesson>Теория вероятностей</lesson>
+					<lesson>Дискретная математика</lesson>
+					<lesson>Русский язык</lesson>
+					<lesson>ПИС</lesson>
+					<lesson>ОИС</lesson>
+				</lessons>
+			</group>
+		</course>
+		<course value="3">
+			<group name="ИА-58">
+				<student name="Илья Приходькин"></student>
+				<student name="Роман Муравьев"></student>
+				<student name="Алина Отстаньева"></student> 
+				<lessons>
+					<lesson>Телевидение</lesson>
+					<lesson>Аудиотехника</lesson>
+					<lesson>УСЧ</lesson>
+					<lesson>ЦОС</lesson>
+					<lesson>Схемотехника</lesson>
+					<lesson>АСУ</lesson>
+					<lesson>Физика</lesson>
+				</lessons>
+			</group>
+		</course>
+	</facult>
+</students>

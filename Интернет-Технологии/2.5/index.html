@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Лабораторная работа 2.5</title>
+		<script>
+			var clock;
+
+			function timer(hours, minutes, day, month, year, daytime) {
+				document.img_h0.src = "dg" + Math.floor(hours / 10) + ".gif"
+				document.img_h1.src = "dg" + (hours % 10) + ".gif"
+
+				document.img_m0.src = "dg" + Math.floor(minutes / 10) + ".gif"
+				document.img_m1.src = "dg" + (minutes % 10) + ".gif"
+
+				document.img_hm.src = "dg" + daytime + ".gif"
+
+				document.img_d0.src = "dg" + Math.floor(day / 10) + ".gif"
+				document.img_d1.src = "dg" + (day % 10) + ".gif"
+
+				document.img_th0.src = "dg" + Math.floor(month / 10) + ".gif"
+				document.img_th1.src = "dg" + (month % 10) + ".gif"
+
+				document.img_y0.src = "dg" + Math.floor(year / 1000) + ".gif"
+				document.img_y1.src = "dg" + Math.floor((year / 100) % 10) + ".gif"
+				document.img_y2.src = "dg" + Math.floor((year / 10) % 10) + ".gif"
+				document.img_y3.src = "dg" + (year % 10) + ".gif"       
+			}
+
+			function get_time() {
+				var time = new Date();
+				var hours = time.getHours();
+				var daytime;
+				if (hours > 12) {
+					daytime = "pm"
+				}
+				else {
+					daytime = "am"
+				}
+				var minutes = time.getMinutes();
+				var day = time.getDate();
+				var month = time.getMonth();
+				var year = time.getFullYear();
+				timer(hours, minutes, day, month, year, daytime);
+				clearTimeout(clock);
+				clock = setTimeout('get_time()', 100);
+			}
+	</script>
+	</head>
+	<style>
+		img {
+			margin: -2px;
+		}
+		.border {
+			margin-right: 2px;
+		} 
+	</style>
+	<body onload="get_time()">
+		<p align="center">
+			<font size = 8>Часы</font>
+		</p>
+		<br>
+		<p align="center">
+			<img src="dg0.gif" name="img_h0">
+			<img src="dg0.gif" name="img_h1">
+			<img src="dgc.gif" name="img_dgc">
+			<img src="dg0.gif" name="img_m0">
+			<img src="dg0.gif" name="img_m1">
+			<img src="dgam.gif" name="img_hm" class="border"> 
+			<img src="dg0.gif" name="img_d0">
+			<img src="dg1.gif" name="img_d1">
+			<img src="dgp.gif" name="img_p1">
+			<img src="dg0.gif" name="img_th0">
+			<img src="dg1.gif" name="img_th1">
+			<img src="dgp.gif" name="img_p2">
+			<img src="dg1.gif" name="img_y0">
+			<img src="dg9.gif" name="img_y1">
+			<img src="dg7.gif" name="img_y2">
+			<img src="dg0.gif" name="img_y3">
+		</p> 
+	</body>
+</html>

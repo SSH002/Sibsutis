@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Лабараторная 3.1</title>
+		<style type="text/css">
+			.main:hover {
+				cursor: default;
+			}
+			a:hover {
+				cursor: default;
+				background-color: fuchsia;
+			}
+			.main {
+				padding: 16px;
+				background-color: teal;
+				position: relative;
+				display: inline-block;
+			}
+			.dropdown {
+				position: absolute;
+				display: none;
+				z-index: 2;
+				padding: 4px;
+				background-color: teal;
+				border: 3px solid black;
+			}
+			#item2{
+				left: 50px;
+			}
+			#item3{
+				left: 80px;
+			}
+		</style>
+		<script type="text/javascript">
+			var timer, time;
+
+			function show(menu) {
+				document.getElementById('item1').style.display='none';
+				document.getElementById('item2').style.display = 'none';
+				document.getElementById('item3').style.display='none';
+				document.getElementById(menu).style.display='inline-block';
+			}
+
+			function hide(menu) {
+				timer = setTimeout(function() {document.getElementById(menu).style.display='none';}, 1000);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<span onMouseOver="show('item1')">Menu1</span>
+			<span onMouseOver="show('item2')">Menu2</span>
+			<span onMouseOver="show('item3')">Menu3</span>
+
+			<div onMouseOver="clearTimeout(timer)" onMouseOut="hide('item1')" class="dropdown" id="item1">
+				<a>Sub Menu 1</a><br>
+				<a>Sub Menu 2</a><br>
+				<a>Sub Menu 3</a><br> 
+				<a>Sub Menu 4</a>
+			</div>
+			<div onMouseOver="clearTimeout(timer)" onMouseOut="hide('item2')" class="dropdown" id="item2">
+				<a>Sub Menu 1</a><br>
+				<a>Sub Menu 2</a><br>
+				<a>Sub Menu 3</a><br> 
+				<a>Sub Menu 4</a>
+			</div>
+			<div onMouseOver="clearTimeout(timer)" onMouseOut="hide('item3')" class="dropdown" id="item3">
+				<a>Sub Menu 1</a><br>
+				<a>Sub Menu 2</a><br>
+				<a>Sub Menu 3</a><br> 
+				<a>Sub Menu 4</a>
+			</div>
+		</div>
+	</body>
+</html>

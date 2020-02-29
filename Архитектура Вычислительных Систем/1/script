@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo "1) Дата"
+date
+echo
+echo "2) Доменное имя"
+hostname
+echo
+echo "3) Имя пользователя"
+whoami
+echo
+echo "4) Центральный процессор"
+lscpu
+echo
+echo "5) Кол-во ядер"
+nproc
+echo
+echo "6) Оперативная память"
+free -h
+echo
+echo "7) Жёсткий Диск"
+df -h /home
+df -h --total | grep "total"
+echo
+free -h | grep "total"
+free -h | grep "Swap"
+echo
+echo "8) Сетевые интерфейсы системы"
+echo
+echo "*- Названния -*"
+ifconfig -a | grep "flags" | awk '{print $1}'
+echo
+echo "*- MAC-адреса -*"
+ifconfig -a | grep "ether" | awk '{print $2}'
+echo
+echo "*- IP-адреса -*"
+ifconfig -a | grep "inet" | awk '{print $2}'
+echo
+echo "*- Пропускная способность -*"
+ethtool enp1s0 | grep "Speed:"

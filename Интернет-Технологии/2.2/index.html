@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Лабораторная работа №2.2</title>
+		<script language="JavaScript">
+		var enable = 0
+		var i = 0
+		var img = new Array("s1.gif", "s2.gif", "s3.gif", "s4.gif", "s5.gif", "s6.gif", "s7.gif", "s8.gif", "s9.gif", "s10.gif", "s11.gif", "s12.gif")
+		var speed = 1000
+		var temp = 1
+		function start()
+		{
+			enable = 1
+			anime()
+		}
+		function anime()
+		{
+			if (enable == 1) {
+				document.body.background = img[i];
+				i++
+				if (i > 11) {
+					i = 0
+				}
+				setTimeout('anime()', speed * temp)
+			}
+		}
+		function quickly()
+		{
+			temp = 0.5
+			anime()
+		}
+		function slowly()
+		{
+			temp = 2
+			anime()
+		}
+		function stop()
+		{
+			enable = 0
+			speed = 1000
+			anime()
+		}
+		</script>
+	</head>
+	<style>
+		body {
+			background-repeat: no-repeat;
+		}
+	</style>
+	<body>
+		<form>
+		<p align="right"><input type="button" value="Старт" onClick="start()"></p>
+		<p align="right"><input type="button" value="Стоп" onClick="stop()"></p>
+		<p align="right"><input type="button" value="Быстрее" onClick="quickly()"></p>
+		<p align="right"><input type="button" value="Медленее" onClick="slowly()"></p>
+		</form>
+	</body>
+</html>

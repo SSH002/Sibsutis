@@ -1,0 +1,16 @@
+C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Send.csprojAssemblyReference.cache
+C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Send.csproj.GenerateResource.cache
+C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Send.csproj.CoreCompileInputs.cache
+C:\Users\adminka\source\repos\TCP\TCP_Receive\bin\Debug\TCP_Send.exe
+C:\Users\adminka\source\repos\TCP\TCP_Receive\bin\Debug\TCP_Send.pdb
+C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP.Properties.Resources.resources
+C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Send.exe
+C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Send.pdb
+C:\Users\adminka\source\repos\TCP\TCP_Send\obj\Debug\TCP_Send.csprojAssemblyReference.cache
+C:\Users\adminka\source\repos\TCP\TCP_Send\obj\Debug\TCP.Properties.Resources.resources
+C:\Users\adminka\source\repos\TCP\TCP_Send\obj\Debug\TCP_Send.csproj.GenerateResource.cache
+C:\Users\adminka\source\repos\TCP\TCP_Send\obj\Debug\TCP_Send.csproj.CoreCompileInputs.cache
+C:\Users\adminka\source\repos\TCP\TCP_Send\obj\Debug\TCP_Send.exe
+C:\Users\adminka\source\repos\TCP\TCP_Send\obj\Debug\TCP_Send.pdb
+C:\Users\adminka\source\repos\TCP\TCP_Send\bin\Debug\TCP_Send.exe
+C:\Users\adminka\source\repos\TCP\TCP_Send\bin\Debug\TCP_Send.pdb

@@ -1,0 +1,8 @@
+C:\Users\adminka\source\repos\UDP\UDP_Send\bin\Debug\UDP_Send.exe
+C:\Users\adminka\source\repos\UDP\UDP_Send\bin\Debug\UDP_Send.pdb
+C:\Users\adminka\source\repos\UDP\UDP_Send\obj\Debug\UDP_Send.csprojAssemblyReference.cache
+C:\Users\adminka\source\repos\UDP\UDP_Send\obj\Debug\UDP.Properties.Resources.resources
+C:\Users\adminka\source\repos\UDP\UDP_Send\obj\Debug\UDP_Send.csproj.GenerateResource.cache
+C:\Users\adminka\source\repos\UDP\UDP_Send\obj\Debug\UDP_Send.csproj.CoreCompileInputs.cache
+C:\Users\adminka\source\repos\UDP\UDP_Send\obj\Debug\UDP_Send.exe
+C:\Users\adminka\source\repos\UDP\UDP_Send\obj\Debug\UDP_Send.pdb
