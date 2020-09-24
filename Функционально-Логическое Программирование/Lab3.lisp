@@ -1,5 +1,5 @@
-;Бригада №7
-;Задание 2
+п»ї;Р‘СЂРёРіР°РґР° в„–7
+;Р—Р°РґР°РЅРёРµ 2
 (defun is_subset (a b)
     (cond
         ((null a) t) 
@@ -10,7 +10,7 @@
 (print(is_subset '(x y) '(a c v x z y)))
 (print(is_subset '(x y i) '(a c v x z y)))
 
-;Задание 6
+;Р—Р°РґР°РЅРёРµ 6
 (defun in_predicate (a l)
     (cond
         ((null l) nil)
@@ -29,7 +29,7 @@
 )
 (print(difference '(a b c d e) '(b c f g)))
 
-;Задание 9
+;Р—Р°РґР°РЅРёРµ 9
 (defun change (func lst) 
     (cond
         ((null lst) nil) 

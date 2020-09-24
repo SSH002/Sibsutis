@@ -1,5 +1,5 @@
-;Бригада №7
-;Задание 7
+п»ї;Р‘СЂРёРіР°РґР° в„–7
+;Р—Р°РґР°РЅРёРµ 7
 (defun last_insert (ins lst)
     (cond ((null lst) (list ins))
         ((> (car lst) ins) (cons ins lst))
@@ -8,7 +8,7 @@
 )
 (print(last_insert 70 '(0 3 3 6 909)))
 
-;Задание 17
+;Р—Р°РґР°РЅРёРµ 17
 (defun del_even (lst) 
     (cond
         ((< (length lst) 2) lst)
@@ -17,7 +17,7 @@
 )
 (print(del_even '(-2 6 s -1 4 f 0 z x r)))
 
-;Задание 27
+;Р—Р°РґР°РЅРёРµ 27
 (defun deep_search (X)
     (cond
         ((atom X) 0)

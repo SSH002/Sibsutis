@@ -1,4 +1,4 @@
-parent(jhon, bob).
+﻿parent(jhon, bob).
 parent(marry, bob).
 parent(marry, ann).
 parent(bob, liz).
