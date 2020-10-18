@@ -1,0 +1,9 @@
+bin/*
+build/compiler/*.o
+build/test/*.o
+builld/asm/*.s
+comp
+minimum
+min_div
+substr
+eq

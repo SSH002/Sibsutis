@@ -1,0 +1,91 @@
+Задание:
+1. Реализовать метод Гаусса для решения СЛАУ с использованием технологии CUDA.
+2. Реализовать метод простых итераций для решения СЛАУ с использованием технологии CUDA.
+
+Алгоритмы реализовать в двух вариантах: с использованием разделяемой памяти и без использования разделяемой памяти. Измерить время вычислений и эффективность использования памяти.
+
+
+Метрики для nvprof:
+dram_utilization - уровень пропускной способности dram относительно пиковой пропускной способности (от 0 до 10).
+dram_read_throughput - пропускная способность считывания из dram.
+dram_write_throughput - пропускная пособность записи в dram.
+global_hit_rate - процент попаданий в L1/texture кэш.
+gld_throughput - пропускная способность считывания из глобальной памяти
+gld_reqested_throughput - эффективная пропускная способность считываний из глобальной памяти.
+gld_efficiency - эффективность считываний из глобальной памяти - отношение эффективной пропускной способности считываний из глобальной памяти к общей пропускной cпособности считываний из глобальной памяти.
+gst_throughput - пропускная способность записи в глобальную память.
+gst_requested_throughput - эффективная пропускная способность записи в глобальную память.
+gst_efficiency - эффективность записи в глобальную память - отношение gst_requested_throughput к gst_throughput.
+shared_efficiency - отношение эффективной пропускной способности разделяемой памяти к фактической.
+shared_utilization - уровень использования разделяемой памяти относительно пиковой нагрузки.
+shared_store_throughput - пропускная способность записи в разделяемую память.
+shared_load_throughput - пропускная способность считывания из разделяемой памяти.
+
+Полный список метрик можно найти по адресу https://docs.nvidia.com/cuda/profiler-users-guide/index.html
+
+Пример coalescing:
+
+__global__ void kernel_copy(int *a, int *c) {
+        int i = threadIdx.x + blockDim.x * blockIdx.x;
+        if(i < SIZE) {
+                c[i] = a[i];
+        }
+}
+
+nvprof -m gst_efficiency,gld_efficiency,gld_throughput,gst_throughput,dram_read_throughput,dram_write_throughput,gld_requested_throughput,gst_requested_throughput,global_hit_rate,drate,dram_utilization ./cpy0
+threads per block = 1024
+Elapsed time: 61.8226 ms
+
+==8559== NVPROF is profiling process 8559, command: ./cpy0
+==8559== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==8559== Profiling application: ./cpy0
+==8559== Profiling result:
+==8559== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "GeForce GTX 1050 (0)"
+    Kernel: kernel_copy(int*, int*)
+          1                            gst_efficiency            Global Memory Store Efficiency      82.04%      82.04%      82.04%
+          1                            gld_efficiency             Global Memory Load Efficiency      82.04%      82.04%      82.04%
+          1                            gld_throughput                    Global Load Throughput  52.265GB/s  52.265GB/s  52.265GB/s
+          1                            gst_throughput                   Global Store Throughput  52.265GB/s  52.265GB/s  52.265GB/s
+          1                      dram_read_throughput             Device Memory Read Throughput  42.878GB/s  42.878GB/s  42.878GB/s
+          1                     dram_write_throughput            Device Memory Write Throughput  42.915GB/s  42.915GB/s  42.915GB/s
+          1                  gld_requested_throughput          Requested Global Load Throughput  42.876GB/s  42.876GB/s  42.876GB/s
+          1                  gst_requested_throughput         Requested Global Store Throughput  42.876GB/s  42.876GB/s  42.876GB/s
+          1                           global_hit_rate         Global Hit Rate in unified l1/tex      48.70%      48.70%      48.70%
+          1                          dram_utilization                 Device Memory Utilization    High (9)    High (9)    High (9)
+
+
+Пример uncoalescing:
+
+__global__ void kernel_copy(int *a, int *b) {
+        int i = threadIdx.x + blockDim.x * blockIdx.x;
+        if(i < SIZE) {
+                i = (i * 18) % SIZE;
+                c[i] = a[i];
+        }
+}
+
+nvprof -m gst_efficiency, gld_efficiency, gld_throughput, gst_throughput, dram_read_throughput, dram_write_throughput, gld_requested_throughput, gst_requested_throughput, global_hit_rate, drate, dram_utilization ./cpy18
+
+==8646== NVPROF is profiling process 8646, command: ./cpy18
+==8646== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==8646== Profiling application: ./cpy18
+==8646== Profiling result:
+==8646== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "GeForce GTX 1050 (0)"
+    Kernel: kernel_copy(int*, int*)
+          1                            gst_efficiency            Global Memory Store Efficiency      12.50%      12.50%      12.50%
+          1                            gld_efficiency             Global Memory Load Efficiency      12.50%      12.50%      12.50%
+          1                            gld_throughput                    Global Load Throughput  41.174GB/s  41.174GB/s  41.174GB/s
+          1                            gst_throughput                   Global Store Throughput  41.174GB/s  41.174GB/s  41.174GB/s
+          1                      dram_read_throughput             Device Memory Read Throughput  41.979GB/s  41.979GB/s  41.979GB/s
+          1                     dram_write_throughput            Device Memory Write Throughput  41.216GB/s  41.216GB/s  41.216GB/s
+          1                  gld_requested_throughput          Requested Global Load Throughput  5.1467GB/s  5.1467GB/s  5.1467GB/s
+          1                  gst_requested_throughput         Requested Global Store Throughput  5.1467GB/s  5.1467GB/s  5.1467GB/s
+          1                           global_hit_rate         Global Hit Rate in unified l1/tex       0.00%       0.00%       0.00%
+          1                          dram_utilization                 Device Memory Utilization    High (8)    High (8)    High (8)
+
+threads per block = 1024
+Elapsed time: 84.4636 ms
