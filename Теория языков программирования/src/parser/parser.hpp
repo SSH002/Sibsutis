@@ -71,8 +71,26 @@ bool check_array_data_tok(Token token);
 bool check_array_name_tok(Token token);
 bool check_printf_tok(Token token);
 
+bool check_parse_if(Token token);
+bool check_parse_if_cond(Token current, Token preview);
+bool check_parse_if_body(Token current, Token preview);
+bool check_parse_else(Token token);
+bool check_parse_for(Token token);
+bool check_parse_for_cond(Token current, Token preview);
+bool check_parse_for_body(Token current, Token preview);
+bool check_parse_array_data(Token current, Token preview);
+bool check_parse_array_name(Token token);
+bool check_parse_printf(Token token);
+bool check_parse_return(Token token);
+bool check_parse_string_lexeme(Token token);
 bool check_parse_number(Token token);
+bool check_parse_variable(Token token);
+bool check_parse_break(Token token);
+bool check_parse_assignment(Token token);
 bool check_parse_binary_oper(Token token);
+bool check_parse_unary_oper(Token token);
+bool check_parse_logic_oper(Token token);
+bool check_parse_ternar_oper(Token token);
 
 void check_right_paren_error(Token next, Token current);
 void check_left_paren_error(Token token);

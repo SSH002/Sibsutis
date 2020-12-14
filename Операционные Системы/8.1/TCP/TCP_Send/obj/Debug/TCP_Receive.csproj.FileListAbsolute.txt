@@ -1,8 +1,0 @@
-C:\Users\adminka\source\repos\TCP\TCP_Receive\bin\Debug\TCP_Receive.exe
-C:\Users\adminka\source\repos\TCP\TCP_Receive\bin\Debug\TCP_Receive.pdb
-C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Receive.Properties.Resources.resources
-C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Receive.csproj.GenerateResource.cache
-C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Receive.csproj.CoreCompileInputs.cache
-C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Receive.exe
-C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Receive.pdb
-C:\Users\adminka\source\repos\TCP\TCP_Receive\obj\Debug\TCP_Receive.csprojAssemblyReference.cache

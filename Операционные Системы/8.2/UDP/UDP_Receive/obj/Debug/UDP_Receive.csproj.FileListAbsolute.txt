@@ -1,8 +1,0 @@
-C:\Users\adminka\source\repos\UDP\UDP_Receive\bin\Debug\UDP_Receive.exe
-C:\Users\adminka\source\repos\UDP\UDP_Receive\bin\Debug\UDP_Receive.pdb
-C:\Users\adminka\source\repos\UDP\UDP_Receive\obj\Debug\UDP_Receive.csprojAssemblyReference.cache
-C:\Users\adminka\source\repos\UDP\UDP_Receive\obj\Debug\UDP.Properties.Resources.resources
-C:\Users\adminka\source\repos\UDP\UDP_Receive\obj\Debug\UDP_Receive.csproj.GenerateResource.cache
-C:\Users\adminka\source\repos\UDP\UDP_Receive\obj\Debug\UDP_Receive.csproj.CoreCompileInputs.cache
-C:\Users\adminka\source\repos\UDP\UDP_Receive\obj\Debug\UDP_Receive.exe
-C:\Users\adminka\source\repos\UDP\UDP_Receive\obj\Debug\UDP_Receive.pdb

@@ -35,7 +35,7 @@ extern bool is_div_op;
 //Компиляция ассемблерного файла
 void CodGen::compile_asm_file()
 {
-	string comp = "gcc build/asm/" + asm_file_name + " -o " + exc_file_name;
+	string comp = "gcc build/asm/" + asm_file_name + " -no-pie -o" + exc_file_name;
 
 	if(!system(comp.c_str())) {
 		cout << "Done: " << src_file_name << " -> " <<  asm_file_name << " -> " << exc_file_name << endl;

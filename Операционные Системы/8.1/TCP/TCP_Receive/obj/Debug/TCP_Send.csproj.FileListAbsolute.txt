@@ -1,8 +1,0 @@
-C:\Users\adminka\source\repos\TCP\TCP\bin\Debug\TCP.exe
-C:\Users\adminka\source\repos\TCP\TCP\bin\Debug\TCP.pdb
-C:\Users\adminka\source\repos\TCP\TCP\obj\Debug\TCP_Send.csprojAssemblyReference.cache
-C:\Users\adminka\source\repos\TCP\TCP\obj\Debug\TCP.Properties.Resources.resources
-C:\Users\adminka\source\repos\TCP\TCP\obj\Debug\TCP_Send.csproj.GenerateResource.cache
-C:\Users\adminka\source\repos\TCP\TCP\obj\Debug\TCP_Send.csproj.CoreCompileInputs.cache
-C:\Users\adminka\source\repos\TCP\TCP\obj\Debug\TCP.exe
-C:\Users\adminka\source\repos\TCP\TCP\obj\Debug\TCP.pdb

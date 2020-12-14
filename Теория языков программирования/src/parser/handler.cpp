@@ -27,57 +27,57 @@ AST *Parser::handler(Token token, Lexer *lexer)
 	}
 
 	//Обработка условия условного ветвления
-	if(token.get_lexeme() == "(" && Parser::preview.get_lexeme() == "if") {
+	if(check_parse_if_cond(token, Parser::preview)) {
 		return parse_if_cond(lexer);
 	}
 
 	//Обработка тела условного ветвления
-	if(token.get_lexeme() == "{" && Parser::preview.get_lexeme() == "if") {
+	if(check_parse_if_body(token, Parser::preview)) {
 		return parse_if_body(lexer);
 	}
 
 	//Обработка условия цикла for
-	if(token.get_lexeme() == "(" && Parser::preview.get_lexeme() == "for") {
+	if(check_parse_for_cond(token, Parser::preview)) {
 		return parse_for_cond(lexer);
 	}
 
 	//Обработка тела цикла for
-	if(token.get_lexeme() == "{" && Parser::preview.get_lexeme() == "for") {
+	if(check_parse_for_body(token, Parser::preview)) {
 		return parse_for_body(lexer);
 	}
 
 	//Обработка массива
-	if(token.get_descr() == "array_name") {
+	if(check_parse_array_name(token)) {
 		return parse_array_name(token, lexer);
 	}
 
 	//Обработка данных, записываемых в массив
-	if(current.get_lexeme() == "array(") {
+	if(check_parse_array_data(token, Parser::preview)) {
 		return parse_array_data(lexer);
 	}
 
 	//Функция printf
-	if(token.get_lexeme() == "printf") {
+	if(check_parse_printf(token)) {
 		return parse_printf(token, lexer);
 	}
 
 	//Условное ветвление
-	if(token.get_lexeme() == "if") {
+	if(check_parse_if(token)) {
 		return parse_if(token, lexer);
 	}
 
 	//Ключевое слово else
-	if(token.get_lexeme() == "else") {
+	if(check_parse_else(token)) {
 		return parse_else(token, lexer);
 	}
 
 	//Цикл for
-	if(token.get_lexeme() == "for") {
+	if(check_parse_for(token)) {
 		return parse_for(token, lexer);
 	}
 
 	//Строковая лексема
-	if(token.get_descr() == "string_literal") {
+	if(check_parse_string_lexeme(token)) {
 		return parse_string_lexeme(token);
 	}
 
@@ -87,22 +87,22 @@ AST *Parser::handler(Token token, Lexer *lexer)
 	}
 
 	//Переменная
-	if(token.get_descr() == "variable") {
+	if(check_parse_variable(token)) {
 		return parse_variable(token);
 	}
 
 	//Ключевое слово break
-	if(token.get_lexeme() == "break") {
+	if(check_parse_break(token)) {
 		return parse_break(token, lexer);
 	}
 
 	//Операция присваивания
-	if(token.get_lexeme() == "=") {
+	if(check_parse_assignment(token)) {
 		return parse_assignment(token, lexer);
 	}
 
 	//Логический оператор
-	if(token.get_lexeme() == "&&" || token.get_lexeme() == "||") {
+	if(check_parse_logic_oper(token)) {
 		return parse_logic_oper(token, lexer);
 	}
 
@@ -112,12 +112,12 @@ AST *Parser::handler(Token token, Lexer *lexer)
 	}
 
 	//Унарный оператор
-	if(token.get_lexeme() == "++" || token.get_lexeme() == "--") {
+	if(check_parse_unary_oper(token)) {
 		return parse_unary_oper(token, lexer);
 	}
 
 	//Тернарный оператор
-	if(token.get_lexeme() == "?") {
+	if(check_parse_ternar_oper(token)) {
 		return parse_ternar_oper(token, lexer);
 	}
 

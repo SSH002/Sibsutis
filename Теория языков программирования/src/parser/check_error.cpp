@@ -107,13 +107,97 @@ bool check_array_name_tok(Token token)
 		|| token.get_descr() == "variable" || token.get_lexeme() == "]");
 }
 
-//Проверка токена (чем он является)
+//Проверка токена (чем он является (скобкой, оператором, функцией и т.д.))
 //************************************************************************
+bool check_parse_if(Token token)
+{
+	return (token.get_lexeme() == "if");
+}
+
+bool check_parse_if_cond(Token current, Token preview)
+{
+	return (current.get_lexeme() == "(" && preview.get_lexeme() == "if");
+}
+
+bool check_parse_if_body(Token current, Token preview)
+{
+	return (current.get_lexeme() == "{" && preview.get_lexeme() == "if");
+}
+
+bool check_parse_else(Token token)
+{
+	return (token.get_lexeme() == "else");
+}
+
+bool check_parse_for(Token token)
+{
+	return (token.get_lexeme() == "for");
+}
+
+bool check_parse_for_cond(Token current, Token preview)
+{
+	return (current.get_lexeme() == "(" && preview.get_lexeme() == "for");
+}
+
+bool check_parse_for_body(Token current, Token preview)
+{
+	return (current.get_lexeme() == "{" && preview.get_lexeme() == "for");
+}
+
+bool check_parse_array_name(Token token)
+{
+	return (token.get_descr() == "array_name");
+}
+
+bool check_parse_array_data(Token current, Token preview)
+{
+	return (current.get_lexeme() == "array(");
+}
+
+bool check_parse_printf(Token token)
+{
+	return (token.get_lexeme() == "printf");
+}
+
+bool check_parse_return(Token token)
+{
+	return (token.get_lexeme() == "return");
+}
+
+bool check_parse_string_lexeme(Token token)
+{
+	return (token.get_descr() == "string_literal");
+}
 
 bool check_parse_number(Token token)
 {
 	return (token.get_descr() == "digit_literal_dec" || token.get_descr() == "digit_literal_bin"
 		|| token.get_descr() == "digit_literal_hex" || token.get_descr() == "digit_literal_oct");
+}
+
+bool check_parse_variable(Token token)
+{
+	return (token.get_descr() == "variable");
+}
+
+bool check_parse_break(Token token)
+{
+	return (token.get_lexeme() == "break");
+}
+
+bool check_parse_assignment(Token token)
+{
+	return (token.get_lexeme() == "=");
+}
+
+bool check_parse_logic_oper(Token token)
+{
+	return (token.get_lexeme() == "&&" || token.get_lexeme() == "||");
+}
+
+bool check_parse_unary_oper(Token token)
+{
+	return (token.get_lexeme() == "++" || token.get_lexeme() == "--");
 }
 
 bool check_parse_binary_oper(Token token)
@@ -122,6 +206,12 @@ bool check_parse_binary_oper(Token token)
 		|| token.get_lexeme() == "/" || token.get_lexeme() == "%" || token.get_lexeme() == "=="
 		|| token.get_lexeme() == "!=" || token.get_lexeme() == ">=" || token.get_lexeme() == "<="
 		|| token.get_lexeme() == ">" || token.get_lexeme() == "<" || token.get_lexeme() == ":" );
+}
+
+bool check_parse_ternar_oper(Token token)
+{
+	return (token.get_lexeme() == "?");
+
 }
 
 //Проверка на различные синтаксические ошибки
